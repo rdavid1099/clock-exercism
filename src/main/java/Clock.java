@@ -3,14 +3,22 @@ class Clock {
     private String hour, minute;
 
     public Clock(int hour, int min) {
-        addHours = (min >= 0) ? min / 60 : (-60 + min) / 60;
-        this.rawMin = calcRolloverTime(min, 60);
-        this.rawHour = calcRolloverTime(hour + addHours, 24);
+        calculateTimeOnClock(hour, min);
     }
 
     public String toString() {
         convertRawTime();
         return hour + ":" + minute;
+    }
+
+    public void add(int minutes) {
+        calculateTimeOnClock(rawHour, rawMin + minutes);
+    }
+
+    private void calculateTimeOnClock(int hour, int min) {
+        addHours = (min >= 0) ? min / 60 : (-60 + min) / 60;
+        rawMin = calcRolloverTime(min, 60);
+        rawHour = calcRolloverTime(hour + addHours, 24);
     }
 
     private void convertRawTime() {
