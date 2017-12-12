@@ -4,7 +4,7 @@ class Clock {
 
     public Clock(int hour, int min) {
         this.rawMin = minutesInHours(min);
-        this.rawHour = (hour + addHours) % 24;
+        this.rawHour = calcRolloverHours(hour + addHours);
     }
 
     public String toString() {
@@ -23,8 +23,11 @@ class Clock {
     }
 
     private int minutesInHours(int initMin) {
-        if (initMin / 60 == 0) return initMin;
-        addHours = initMin / 60;
-        return initMin % 60;
+        addHours = (initMin >= 0) ? initMin / 60 : (-60 + initMin) / 60;
+        return (initMin >= 0) ? initMin % 60 : 60 + (initMin % 60);
+    }
+
+    private int calcRolloverHours(int initHour) {
+        return (initHour >= 0) ? initHour % 24 : 24 + (initHour % 24);
     }
 }
