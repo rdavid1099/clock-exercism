@@ -1,8 +1,9 @@
 class Clock {
     private int rawHour, rawMin;
     private String hour, minute;
+
     public Clock(int hour, int min) {
-        this.rawHour = hour;
+        this.rawHour = hour % 24;
         this.rawMin = min;
     }
 
@@ -12,11 +13,12 @@ class Clock {
     }
 
     private void convertRawTime() {
-        hour   = formatNum(Integer.toString(rawHour));
-        minute = formatNum(Integer.toString(rawMin));
+        hour   = formatNum(rawHour);
+        minute = formatNum(rawMin);
     }
 
-    private String formatNum(String rawNum) {
-        return (rawHour < 10) ? "0" + rawNum : rawNum;
+    private String formatNum(int rawNum) {
+        String displayNum = Integer.toString(rawNum);
+        return (rawNum < 10) ? "0" + displayNum : displayNum;
     }
 }

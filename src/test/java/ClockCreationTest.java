@@ -10,25 +10,21 @@ public class ClockCreationTest {
         assertEquals("08:00", new Clock(8, 0).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canPrintTimeWithMinutes() {
         assertEquals("11:09", new Clock(11, 9).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void midnightPrintsAsZero() {
         assertEquals("00:00", new Clock(24, 0).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void hourRollsOver() {
         assertEquals("01:00", new Clock(25, 0).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void hourRollsOverContinuously() {
         assertEquals("04:00", new Clock(100, 0).toString());
