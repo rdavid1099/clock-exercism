@@ -47,7 +47,6 @@ public class ClockAddTest {
         assertEquals("00:01", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addMoreThanOneDay() {
         Clock clock = new Clock(5, 32);
@@ -55,7 +54,6 @@ public class ClockAddTest {
         assertEquals("06:32", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addMoreThanTwoDays() {
         Clock clock = new Clock(1, 1);
@@ -63,7 +61,6 @@ public class ClockAddTest {
         assertEquals("11:21", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void subtractMinutes() {
         Clock clock = new Clock(10, 3);
@@ -71,7 +68,6 @@ public class ClockAddTest {
         assertEquals("10:00", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void subtractToPreviousHour() {
         Clock clock = new Clock(10, 3);
@@ -79,7 +75,6 @@ public class ClockAddTest {
         assertEquals("09:33", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void subtractMoreThanAnHour() {
         Clock clock = new Clock(10, 3);
@@ -87,7 +82,6 @@ public class ClockAddTest {
         assertEquals("08:53", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void subtractAcrossMidnight() {
         Clock clock = new Clock(0, 3);
@@ -95,7 +89,6 @@ public class ClockAddTest {
         assertEquals("23:59", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void subtractMoreThanTwoHours() {
         Clock clock = new Clock(0, 0);
@@ -103,7 +96,6 @@ public class ClockAddTest {
         assertEquals("21:20", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void subtractMoreThanTwoHoursWithBorrow() {
         Clock clock = new Clock(6, 15);
@@ -111,7 +103,6 @@ public class ClockAddTest {
         assertEquals("03:35", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void subtractMoreThanOneDay() {
         Clock clock = new Clock(5, 32);
@@ -119,7 +110,6 @@ public class ClockAddTest {
         assertEquals("04:32", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void subtractMoreThanTwoDays() {
         Clock clock = new Clock(2, 20);

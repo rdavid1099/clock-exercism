@@ -17,8 +17,8 @@ class Clock {
 
     void calculateTimeOnClock(int hour, int min) {
         addHours = (min >= 0) ? min / 60 : (-60 + min) / 60;
-        rawMin = calcRolloverTime(min, 60);
-        rawHour = calcRolloverTime(hour + addHours, 24);
+        rawMin = calcRolloverTime(min, 60) % 60;
+        rawHour = calcRolloverTime(hour + addHours, 24) % 24;
     }
 
     void convertRawTime() {
