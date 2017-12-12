@@ -12,7 +12,6 @@ public class ClockAddTest {
         assertEquals("10:03", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addNoMinutes() {
         Clock clock = new Clock(6, 41);
@@ -20,7 +19,6 @@ public class ClockAddTest {
         assertEquals("06:41", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addToNextHour() {
         Clock clock = new Clock(0, 45);
@@ -28,7 +26,6 @@ public class ClockAddTest {
         assertEquals("01:25", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addMoreThanOneHour() {
         Clock clock = new Clock(10, 0);
@@ -36,7 +33,6 @@ public class ClockAddTest {
         assertEquals("11:01", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addMoreThanTwoHoursWithCarry() {
         Clock clock = new Clock(0, 45);
@@ -44,7 +40,6 @@ public class ClockAddTest {
         assertEquals("03:25", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addAcrossMidnight() {
         Clock clock = new Clock(23, 59);
