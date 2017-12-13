@@ -2,6 +2,14 @@ class Clock {
     private int rawHour, rawMin, addHours = 0;
     private String hour, minute;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Clock)) return false;
+        Clock compare = (Clock) o;
+        return toString().equals(compare.toString());
+    }
+
     Clock(int hour, int min) {
         calculateTimeOnClock(hour, min);
     }
@@ -15,23 +23,23 @@ class Clock {
         calculateTimeOnClock(rawHour, rawMin + minutes);
     }
 
-    void calculateTimeOnClock(int hour, int min) {
+    private void calculateTimeOnClock(int hour, int min) {
         addHours = (min >= 0) ? min / 60 : (-60 + min) / 60;
         rawMin = calcRolloverTime(min, 60) % 60;
         rawHour = calcRolloverTime(hour + addHours, 24) % 24;
     }
 
-    void convertRawTime() {
+    private void convertRawTime() {
         hour   = formatNum(rawHour);
         minute = formatNum(rawMin);
     }
 
-    String formatNum(int rawNum) {
+    private String formatNum(int rawNum) {
         String displayNum = Integer.toString(rawNum);
         return (rawNum < 10) ? "0" + displayNum : displayNum;
     }
 
-    int calcRolloverTime(int initTime, int amount) {
+    private int calcRolloverTime(int initTime, int amount) {
         return (initTime >= 0) ? initTime % amount : amount + (initTime % amount);
     }
 }
